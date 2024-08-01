@@ -1,5 +1,5 @@
 import type { PropsWithChildren, ReactElement } from 'react';
-import { StyleSheet, useColorScheme } from 'react-native';
+import { StyleSheet, useColorScheme, Dimensions } from 'react-native';
 import Animated, {
   interpolate,
   useAnimatedRef,
@@ -62,6 +62,7 @@ export default function ParallaxScrollView({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    height: Dimensions.get('window').height
   },
   header: {
     height: 250,
