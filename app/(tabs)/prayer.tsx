@@ -1,5 +1,5 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform, TextInput, Button } from 'react-native';
+import { StyleSheet, Image, Platform, TextInput, Button, Touchable, TouchableOpacity, Text } from 'react-native';
 
 import { Collapsible } from '@/components/Collapsible';
 import { ExternalLink } from '@/components/ExternalLink';
@@ -52,12 +52,9 @@ export default function TabTwoScreen() {
             padding: 10,
           }}
           placeholder="Oración"/>
-        <Button
-          title="Enviar"
-          color="#841584"
-          accessibilityLabel="Enviar" />
-
-
+        <TouchableOpacity style={{ padding:10, margin:10, backgroundColor:'#841584'}}>
+          <Text style={{ color:'white', textAlign:'center', fontSize:18 }}>Enviar</Text>
+        </TouchableOpacity>
       </ThemedView>
 
     </ParallaxScrollView>
