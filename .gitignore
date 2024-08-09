@@ -1,3 +1,4 @@
+radio-global-*.json
 node_modules/
 .expo/
 dist/
