@@ -19,7 +19,7 @@ export default function HomeScreen() {
         <ThemedText
           type="title"
           style={{ textAlign: 'center', marginTop: 16, marginBottom: 8 }}>
-          Bienvenidos a la Radio Global
+          Bienvenidos a nuestra radio
         </ThemedText>
         <VerseDay />
         <Player />

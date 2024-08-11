@@ -1,13 +1,24 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform, TextInput, Button, Touchable, TouchableOpacity, Text } from 'react-native';
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
+import { StyleSheet, Image, TextInput, TouchableOpacity, Text, Alert } from 'react-native';
+
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { useState } from 'react';
 
 export default function TabTwoScreen() {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [prayer, setPrayer] = useState('');
+
+
+  const handlerSubmit = async () => {
+    Alert.alert('Alerta', 'En este momento no estamos recibiendo peticiones de oración, pronto estaremos habilitando este servicio')
+    setName('')
+    setPhone('')
+    setPrayer('')
+  }
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
@@ -24,7 +35,10 @@ export default function TabTwoScreen() {
         <ThemedText type="title">Envianos tu petición de oración</ThemedText>
       </ThemedView>
       <ThemedView>
+        <Text style={{marginLeft: 10,}}>(Aún no disponible)</Text>
         <TextInput
+          value={name}
+          onChangeText={setName}
           style={{
             height: 40,
             borderColor: 'gray',
@@ -34,6 +48,8 @@ export default function TabTwoScreen() {
           }}
           placeholder="Nombre"/>
         <TextInput
+          value={phone}
+          onChangeText={setPhone}
           style={{
             height: 40,
             borderColor: 'gray',
@@ -43,6 +59,8 @@ export default function TabTwoScreen() {
           }}
           placeholder="Telefono"/>
         <TextInput
+          value={prayer}
+          onChangeText={setPrayer}
           multiline
           style={{
             height: 200,
@@ -50,9 +68,11 @@ export default function TabTwoScreen() {
             borderWidth: 1,
             margin: 10,
             padding: 10,
+            justifyContent: 'flex-start',
+            textAlignVertical: 'top',
           }}
           placeholder="Oración"/>
-        <TouchableOpacity style={{ padding:10, margin:10, backgroundColor:'#841584'}}>
+        <TouchableOpacity style={{ padding:10, margin:10, backgroundColor:'#841584'}} onPress={handlerSubmit}>
           <Text style={{ color:'white', textAlign:'center', fontSize:18 }}>Enviar</Text>
         </TouchableOpacity>
       </ThemedView>

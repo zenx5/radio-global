@@ -14,14 +14,15 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.zenx5.radioglobal"
+      "bundleIdentifier": "pro.zenx5.global"
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logo-church.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.zenx5.radioglobal"
+      "package": "pro.zenx5.global"
     },
     "web": {
       "bundler": "metro",
@@ -29,7 +30,8 @@
       "favicon": "./assets/images/logo-church.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "@react-native-firebase/app"
     ],
     "experiments": {
       "typedRoutes": true
