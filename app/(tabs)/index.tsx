@@ -4,6 +4,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Player } from '@/components/Player';
 import { VerseDay } from '@/components/VerseDay';
+import Player2 from '@/components/Player2';
 
 export default function HomeScreen() {
   return (

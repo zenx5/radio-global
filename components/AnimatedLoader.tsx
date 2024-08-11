@@ -6,18 +6,20 @@ export default function AnimatedLoader({ children, onPress, active }:{ children?
 
     const interpolateRotation = rotateAnimation.interpolate({
         inputRange: [0, 1],
-        outputRange: ['0deg', '1100deg']
+        outputRange: ['0deg', '720deg'],
     });
 
     const animatedStyles = {
-        transform: [{ rotate: interpolateRotation }]
+        transform: [{
+            rotate: interpolateRotation
+        }]
     };
 
     const handleAnimation = async () => {
         Animated.timing(rotateAnimation, {
             toValue: 1,
-            duration: 10000,
-            useNativeDriver: true
+            duration: 5000,
+            useNativeDriver: true,
         }).start();
     }
 
