@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { TouchableOpacity, View, type ViewProps } from "react-native";
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import AnimatedLoader from "./AnimatedLoader";
 import { Audio } from 'expo-av';
 
 export type PlayerProps = ViewProps & {
@@ -15,14 +14,38 @@ export function Player() {
     const [sound, setSound] = useState<Audio.Sound>();
     const uri = 'https://guri.tepuyserver.net/8144/stream'
 
+    // create new notificaction for play sound in background
+    const createPlayerNotification = async () => {
+        await Audio.setAudioModeAsync({
+            shouldDuckAndroid: true,
+            interruptionModeAndroid: 2,
+            playThroughEarpieceAndroid: false,
+            staysActiveInBackground: true,
+        });
+    }
+
     async function playSound() {
-        const { sound } = await Audio.Sound.createAsync( { uri } );
-        setSound(sound);
-        await sound.playAsync();
+        try{
+            if( sound) {
+                await sound.playAsync();
+            }
+            else {
+                createPlayerNotification();
+                const { sound:playbackObject } = await Audio.Sound.createAsync( { uri } );
+                setSound(playbackObject);
+                await playbackObject.playAsync();
+            }
+        }catch(error){
+            console.log(error)
+        }
     }
 
     async function stopSound() {
-        await sound?.stopAsync();
+        try{
+            await sound?.pauseAsync();
+        } catch(error){
+            console.log(error)
+        }
     }
 
     const handlerToggle = async () => {

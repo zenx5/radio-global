@@ -1,0 +1,74 @@
+export const GENESIS = 1;
+export const EXODUS = 2;
+export const LEVITICUS = 3;
+export const NUMBERS = 4;
+export const DEUTERONOMY = 5;
+export const JOSHUA = 6;
+export const JUDGES = 7;
+export const RUTH = 8;
+export const SAMUEL1 = 9;
+export const SAMUEL2 = 10;
+export const KINGS1 = 11;
+export const KINGS2 = 12;
+export const CHRONICLES1 = 13;
+export const CHRONICLES2 = 14;
+export const EZRA = 15;
+export const NEHEMIAH = 16;
+export const ESTHER = 17;
+export const JOB = 18;
+export const PSALMS = 19;
+export const PROVERBS = 20;
+export const ECCLESIASTES = 21;
+export const SONGS = 22;
+export const ISAIAH = 23;
+export const JEREMIAH = 24;
+export const LAMENTATIONS = 25;
+export const EZEKIEL = 26;
+export const DANIEL = 27;
+export const HOSEA = 28;
+export const JOEL = 29;
+export const AMOS = 30;
+export const OBADIAH = 31;
+export const JONAH = 32;
+export const MICAH = 33;
+export const NAHUM = 34;
+export const HABAKKUK = 35;
+export const ZEPHANIAH = 36;
+export const HAGGAI = 37;
+export const ZECHARIAH = 38;
+export const MALACHI = 39;
+export const MATTHEW = 40;
+export const MARK = 41;
+export const LUKE = 42;
+export const JOHN = 43;
+export const ACTS = 44;
+export const ROMANS = 45;
+export const CORINTHIANS1 = 46;
+export const CORINTHIANS2 = 47;
+export const GALATIANS = 48;
+export const EPHESIANS = 49;
+export const PHILIPPIANS = 50;
+export const COLOSSIANS = 51;
+export const THESSALONIANS1 = 52;
+export const THESSALONIANS2 = 53;
+export const TIMOTHY1 = 54;
+export const TIMOTHY2 = 55;
+export const TITUS = 56;
+export const PHILEMON = 57;
+export const HEBREWS = 58;
+export const JAMES = 59;
+export const PETER1 = 60;
+export const PETER2 = 61;
+export const JOHN1 = 62;
+export const JOHN2 = 63;
+export const JOHN3 = 64;
+export const JUDE = 65;
+export const REVELATION = 66;
+
+export const CHAPTERS = [
+    50, 40, 27, 36, 34, 24, 21, 4, 31, 24, 22, 25, 29, 36, 10, 13, 10, 42, 150, 31, 12, 8, 66, 52, 5, 48, 12, 14, 3, 9, 1, 4, 7, 3, 3, 3, 2, 14, 4, 28, 16, 24, 21, 28, 16, 16, 13, 6, 6, 4, 4, 5, 3, 6, 4, 3, 1, 13, 5, 5, 3, 5, 1, 1, 1, 22
+]
+
+export const BOOKS_NAMES = [
+    "Génesis", "Éxodo", "Levítico", "Números", "Deuteronomio", "Josué", "Jueces", "Rut", "1 Samuel", "2 Samuel", "1 Reyes", "2 Reyes", "1 Crónicas", "2 Crónicas", "Esdras", "Nehemías", "Ester", "Job", "Salmos", "Proverbios", "Eclesiastés", "Cantares", "Isaías", "Jeremías", "Lamentaciones", "Ezequiel", "Daniel", "Oseas", "Joel", "Amós", "Abdías", "Jonás", "Miqueas", "Nahúm", "Habacuc", "Sofonías", "Hageo", "Zacarías", "Malaquías", "Mateo", "Marcos", "Lucas", "Juan", "Hechos", "Romanos", "1 Corintios", "2 Corintios", "Gálatas", "Efesios", "Filipenses", "Colosenses", "1 Tesalonicenses", "2 Tesalonicenses", "1 Timoteo", "2 Timoteo", "Tito", "Filemón", "Hebreos", "Santiago", "1 Pedro", "2 Pedro", "1 Juan", "2 Juan", "3 Juan", "Judas", "Apocalipsis"
+]

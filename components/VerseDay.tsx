@@ -1,24 +1,57 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Text, TouchableOpacity, View } from "react-native"
+import { Alert, Text, TouchableOpacity, View, Share } from "react-native"
+import { useBible } from "@/hooks/useBible";
+import { BOOKS_NAMES } from "@/constants/Books";
 
 
 export function VerseDay(){
     const [verse, setVerse] = useState({
-        text: "pero recibiréis poder, cuando haya venido sobre vosotros el Espíritu Santo, y me seréis testigos en Jerusalén, en toda Judea, en Samaria, y hasta lo último de la tierra.",
-        reference: "Hechos 1:8"
+        text: "",
+        reference: ""
     })
 
-    const handlerShare = () => {
+    const { getRandomVerse } = useBible()
 
+    useEffect(()=>{
+        const {
+            content,
+            book,
+            chapter,
+            verse
+        } = getRandomVerse()
+        setVerse({
+            text: content,
+            reference: `${BOOKS_NAMES[book]} ${chapter}:${verse}`
+        })
+    },[])
+
+    const randomVerse = () => {
+        const {
+            content,
+            book,
+            chapter,
+            verse
+        } = getRandomVerse()
+        setVerse({
+            text: content,
+            reference: `${BOOKS_NAMES[book]} ${chapter}:${verse}`
+        })
     }
 
-    const handlerCopy = () => {
-
+    const handlerShare = () => {
+        try{
+            Share.share({
+                message: `${verse.text}\n*${verse.reference}*\n[Iglesia Acción Bíblica Global]`
+            })
+        }catch(error){
+            console.log(error)
+            Alert.alert('Error', 'No se pudo compartir el verso, reinicia la aplicación e intenta de nuevo')
+        }
     }
 
     return <View style={{ display:'flex', flexDirection:'column', gap:5, opacity:0.7 }}>
-        <TouchableOpacity style={{ marginTop: 16, marginBottom: 0 }} onPress={handlerCopy}>
+        <TouchableOpacity style={{ marginTop: 16, marginBottom: 0 }} onPress={randomVerse}>
             <Text style={{ textAlign: 'center', fontStyle:'italic', fontSize:18 }}>
                 "{verse.text}"
             </Text>
